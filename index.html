@@ -6,7 +6,7 @@
         <meta name="description" content="Part of the apuem collection">
         <meta name="keywords" content="lorem, ipsum, generator, apuem">
         <meta name="author" content="apuem">
-        <title>App - apuem</title>
+        <title>Random Number Generator - apuem</title>
         <link rel="apple-touch-icon" sizes="57x57" href="../images/favicon/apple-icon-57x57.png" />
         <link rel="apple-touch-icon" sizes="60x60" href="../images/favicon/apple-icon-60x60.png" />
         <link rel="apple-touch-icon" sizes="72x72" href="../images/favicon/apple-icon-72x72.png" />
@@ -25,27 +25,24 @@
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
         <link href="../../fonts/fonts.css" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/b7ef0ef2a2.js" crossorigin="anonymous"></script>
+        <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-        <!--<script>
-            function logResults(json) {
-                console.log(json);
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEPRDVXYRZ"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
             }
+            gtag("js", new Date());
 
-            $.ajax({
-                url: "https://raw.githubusercontent.com/apuem/apuem.github.io/master/wal.json",
-                dataType: "json",
-            }).done(function (result) {
-                console.log(result);
-                var selected = result.filter(function (item) {
-                    return item.id == 8;
-                });
+            gtag("config", "G-ZEPRDVXYRZ");
+        </script>
 
-                window.location.href = selected[0].rawurl;
-            });
-        </script>-->
         
         <style>
             body {
@@ -72,74 +69,101 @@
                 margin-left: 5vw;
             }
             }
+            .content::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            .content {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+            }
+
+            /* Chrome, Safari, Edge, Opera */
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
+
+            /* Firefox */
+            input[type=number] {
+            -moz-appearance: textfield;
+            }
 </style>
 
-        </style>
+        
+        
+    </head>
+    <body>
+       
         <div class="main" style="height: 80vh; margin-top: 10vh; border-radius: 20px !important; background-color: white;" class="bg-white border border-1">
             <div style="height: 10%;">
-                <h6 class="pt-4 px-5">Our Apps</h6>
+                <h6 class="pt-4 px-5">Random Number Generator <span style="font-weight: 400;" class="text-secondary">by ipapi.co</span></h6>
             </div>
             
             <hr class="text-muted my-0">
-            <div class="mt-2" style="overflow-y: scroll; height: 75%;">
+            <div class="mt-2 content" style="overflow-y: scroll; height: 75%;">
             <div class="bg-light rounded-3 mx-5 my-2">
-                <p class="px-3 pt-3">List</p>
-                
+                <p class="px-3 py-3">Random Number: <span style="line-break: anywhere; font-weight: bold; font-size: large;" id="rnum" class=" user-select-all text-primary px-2">-</span></p>
             </div>
+            
+            
+            <div class="bg-light rounded-3 mx-5 my-2">
+                <p class="p-3"><i class="fas fa-info-circle px-2"></i><a class="link" style="cursor: pointer;" href="../imprint/index.html">Learn more</a></p>
+            </div>
+            <hr class="text-muted my-0">
+            <div class="bg-light rounded-3 mx-5 my-3">
+                <p class="p-3 m-0"><i class="far fa-flag px-2"></i><a class="link-dark" style="cursor: pointer;" href="../report/index.html">Report</a></p>
+                <hr class="text-muted my-0">
+                <p class="p-3 m-0"><i class="fas fa-file-alt px-2"></i><a class="link-dark" style="cursor: pointer;" href="../privacypolicy/index.html">Privacy Policy</a></p>
+                <hr class="text-muted my-0">
+                <p class="p-3"><i class="far fa-file-alt px-2"></i><a class="link-dark" style="cursor: pointer;" href="../imprint/index.html">Imprint</a></p>
+            </div>
+            
             
         </div>
         <hr class="text-muted  my-0">
             <div class="mx-auto my-0" style="height: 15%">
                 <div  class="mx-auto mt-2" style="width: fit-content;">
-                    <div class="btn-group mx-auto" style="width: 80%;" role="group" aria-label="Basic outlined example">
-                        <button onclick="location.reload()" type="button" class="btn btn-outline-secondary btn-sm">Reload</button>
+                    <div class="input-group px-5">
+                        <input id="min" type="number" class="form-control btn-sm" placeholder="Min" aria-label="Minimal Number (default 0)" aria-describedby="button-addonMin" required>
+                        <input id="max" type="number" class="form-control btn-sm" placeholder="Max" aria-label="Maximal Number (default 1)" aria-describedby="button-addonMax" required>
+                        <button class="btn btn-sm btn-outline-secondary" onclick="getRndInteger()" type="button" id="button-addonGenerate">Generate</button>
                     </div>
                 </div>
-                <p class="nav-link text-center mt-1 py-0" aria-current="page" style="color: black; font-family: 'Poppins', sans-serif; opacity: 40%;" href="https://www.apuem.com"><strong>apuem</strong></p>
+                <p class="text-center mt-1 py-0"><strong aria-current="page" style="color: black; font-family: 'Poppins', sans-serif; opacity: 40%;" >apuem</strong></p>
+                
             </div>
             
             
         </div>
+        <!-- <div class="position-absolute bottom-0 start-0"><p class="my-1 mx-2" style="font-size: .75rem; color: white; opacity: 50%;">Copyright © 2021 Apuem <a class="mx-2 link-light">Imprint</a> | <a class="mx-2 link-light">Data Policy</a> | <a class="mx-2 link-light">Learn more</a> | <a class="mx-2 link-light">Report</a></p></div> -->
         <script>
-
-            function moreInformation() {
-
-                var info = "ASN: " + asn + "\n" + 
-                "Continent Code: " + continent_code + "\n" + 
-                "Country: " + country + "\n" + 
-                "Country Area: " + country_area + "\n" + 
-                "Country Calling Code: " + country_calling_code + "\n" + 
-                "Country Capital: " + country_capital + "\n" + 
-                "Country Code: " + country_code + "\n" + 
-                "Country Code (ISO3): " + country_code_iso3 + "\n" + 
-                "Country Population: " + country_population + "\n" + 
-                "Country TLD: " + country_tld + "\n" + 
-                "Currency: " + currency + "\n" + 
-                "Currency Name: " + currency_name + "\n" + 
-                "In EU: " + in_eu + "\n" + 
-                "Languages: " + languages + "\n" + 
-                "Latitude: " + latitude + "\n" + 
-                "Longitude: " + longitude + "\n" + 
-                "Region Code: " + region_code + "\n" + 
-                "Timezone: " + timezone + "\n" + 
-                "UTC Offset: " + utc_offset;
-                alert(info);
-
-            }
+            function getRndInteger() {
+                var min = parseInt(document.getElementById('min').value, 10);
+                var max = parseInt(document.getElementById('max').value, 10);
+                if (isNaN(min) == true) {
+                    min = 0;
+                    document.getElementById('min').value = 0;
+                }
+                if (isNaN(max) == true) {
+                    max = 1;
+                    document.getElementById('max').value = 1;
+                }
+                var rnum =  Math.floor(Math.random() * (max - min + 1) ) + min;
+                document.getElementById("rnum").innerHTML = rnum;
+                }
         </script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZEPRDVXYRZ"></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-
-            gtag("config", "G-ZEPRDVXYRZ");
+            function togglemore() {
+                var xtext = document.getElementById("togglemore");
+                if (xtext.innerHTML === "More") {
+                    xtext.innerHTML = "Less";
+                } else {
+                    xtext.innerHTML = "More";
+                }
+                }
         </script>
-    </head>
-    <body>
-        <p title="description"></p>
     </body>
 </html>
